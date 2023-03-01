@@ -27,3 +27,5 @@ The JavaScript code that controls the calculator is included in an external file
 "index.js". The file includes functions that append values to the calculator display when the 
 buttons are clicked and a function that calculates the result when the equal sign is clicked. 
 The clear button sets the display to zero.
+
+You can<a href="https://canerduzenli.github.io/calculator/">Click</a>to try open it.
