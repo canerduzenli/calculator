@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="eng">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Calculator</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+  <link rel="stylesheet" href="./assets/style/index.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+  <section>
+
+    <div class="calculator">
+      <div class="display">
+        <input class="screen" type="text" id="result" value="0" readonly>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-Di col"><button class="clear" value="clear" onclick="clearDisplay()">Clear</button></div>
+          <div class="col"> <button class="operator" onclick="appendToDisplay('/')">÷</button></div>
+        </div>
+        <div class="row">
+          <div class="col"><button onclick="appendToDisplay('1')">1</button>
+          </div>
+          <div class="col"><button onclick="appendToDisplay('2')">2</button>
+          </div>
+          <div class="col"><button onclick="appendToDisplay('3')">3</button>
+          </div>
+          <div class="col">
+            <div class="col"> <button class="operator" onclick="appendToDisplay('*')">x</button></div>
+          </div>
+
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="col"><button onclick="appendToDisplay('4')">4</button>
+            </div>
+          </div>
+          <div class="col"><button onclick="appendToDisplay('5')">5</button>
+          </div>
+          <div class="col"><button onclick="appendToDisplay('6')">6</button>
+          </div>
+          <button class="operator" onclick="appendToDisplay('-')">-</button>
+
+        </div>
+        <div class="row">
+          <div class="col"><button onclick="appendToDisplay('7')">7</button>
+          </div>
+          <div class="col"><button onclick="appendToDisplay('8')">8</button>
+          </div>
+          <div class="col"><button onclick="appendToDisplay('9')">9</button>
+          </div>
+          <div class="col"><button class="operator" onclick="appendToDisplay('+')">+</button></div>
+        </div>
+        <div class="row">
+          <div> <button class="col-Z" onclick="appendToDisplay('0')">0</button></div>
+          <div class="col"> <button class="decimal" onclick="appendToDisplay('.')">.</button< /div>
+              <div class="col"> <button class="calculate" onclick="calculate()">=</button></div>
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <script src="./assets/style/index.js"></script>
+</body>
