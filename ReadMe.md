@@ -28,4 +28,4 @@ The JavaScript code that controls the calculator is included in an external file
 buttons are clicked and a function that calculates the result when the equal sign is clicked. 
 The clear button sets the display to zero.
 
-You can<a href="https://canerduzenli.github.io/calculator/">Click</a>to try open it.
+You can <a href="https://canerduzenli.github.io/calculator/">Click</a>to try open it.
