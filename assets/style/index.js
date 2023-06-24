@@ -1,23 +1,42 @@
-//calculator buttons call three functions: appendToDisplay, calculate, and clearDisplay.
-
 let inputStr = '';
-// takes a value as an argument 
 
-function appendToDisplay(value) {
-  inputStr += value;
+function updateDisplay() {
   document.getElementById('result').value = inputStr;
 }
-//calculate function use  eval function to evaluate  input string as a mathematical expression and store  result in a variable named result.
-function calculate() {
-  const result = eval(inputStr);
-  document.getElementById('result').value = result;
-  inputStr = '';
-}
-//clearDisplay function resets the input string to an empty string and sets the value of the calculator display to "0"
 
+function appendToDisplay(value) {
+  if (!isNaN(value)) { //if it's a number, add it to the string
+    inputStr += value;
+  } else if (value === '.' && !inputStr.split(/[+\-*/]/).pop().includes('.')) { // if it's a dot and there's not already a dot in the string
+    inputStr += value;
+  } else if (['+', '-', '*', '/'].includes(value) && !['+', '-', '*', '/'].includes(inputStr.slice(-1))) { // if it's an operator and the last character in the string is not an operator
+    inputStr += value;
+  }
+  updateDisplay();
+}
+;
+
+
+
+function calculate() {
+  try {
+    const result = eval(inputStr);
+    if (!isFinite(result)) {
+      throw new Error('Division by zero.');
+    }
+    inputStr = result.toString();
+  } catch (error) {
+    alert('Invalid input: ' + error.message);
+    inputStr = '';
+  }
+  updateDisplay();
+}
+
+function clearDisplay() {
+  inputStr = '';
+  updateDisplay();
+}
 function clearDisplay() {
   inputStr = '';
   document.getElementById('result').value = '0';
 }
-
-
